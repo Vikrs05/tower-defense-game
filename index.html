@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower Defense Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main Menu Screen -->
+    <div id="main-menu" class="screen">
+      <h1>Tower Defense</h1>
+      <button id="btn-play">Play</button>
+      <button id="btn-instructions">Instructions</button>
+      <button id="btn-exit">Exit</button>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div id="instructions" class="screen" style="display: none">
+      <h2>How to Play</h2>
+      <p>
+        Goal: Prevent enemies from reaching the end of the path. Build turrets
+        to destroy them. If an enemy reaches the end, you lose a life. Lose all
+        lives, and it's game over.
+      </p>
+      <h3>Controls:</h3>
+      <ul>
+        <li>
+          <strong>Build Turret:</strong> Click a turret type button then click on the map to place it (costs cash).
+        </li>
+        <li>
+          <strong>Upgrade Turret:</strong> Click on a placed turret to select
+          it, then click the Upgrade button to improve its
+          damage, range, and rate of fire (costs cash).
+        </li>
+        <li>
+          <strong>Fast Forward:</strong> Toggle game speed (1x/2x) with the
+          fast-forward button (⏩). Use this to speed up gameplay
+          when needed.
+        </li>
+        <li>
+          <strong>Pause:</strong> Pause/resume the game with the pause button
+          (⏸️). No actions can be taken while paused.
+        </li>
+        <li>
+          <strong>Reset:</strong> Restart the current map with the reset button
+          (🔄). This clears all turrets and resets waves and lives.
+        </li>
+        <li>
+          <strong>Main Menu/Exit:</strong> You can return to the main menu after
+          a game over, or exit the game from the main menu.
+        </li>
+      </ul>
+      <button id="btn-back-menu">Main Menu</button>
+    </div>
+
+    <!-- Map Selection Screen -->
+    <div id="map-select" class="screen" style="display: none">
+      <div class="left">
+        <h2>Select a Map</h2>
+        <div class="map-option" id="map-1">Map 1: Straight Path</div>
+        <div class="map-option" id="map-2">Map 2: Zigzag Path</div>
+        <button id="btn-play2">Play</button>
+        <button id="btn-back-menu2">Main Menu</button>
+      </div>
+      <div class="right">
+        <canvas id="preview-canvas" width="800" height="500"></canvas>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen" style="display: none">
+      <!-- HUD / Info Bar -->
+      <div id="hud">
+        <span id="hud-lives">Lives: 0</span>
+        <span id="hud-cash">Cash: $0</span>
+        <span id="hud-wave">Wave: 0</span>
+      </div>
+      <!-- Turret Build Buttons -->
+      <div id="build-buttons">
+        <button id="build-turret1">Build Laser Turret [1]</button>
+        <button id="build-turret2">Build Cannon Turret [2]</button>
+        <button id="upgrade-range" style="display: none">Upgrade Range</button>
+        <button id="upgrade-damage" style="display: none">
+          Upgrade Damage
+        </button>
+        <button id="upgrade-firespeed" style="display: none">
+          Upgrade Fire Speed
+        </button>
+        <label id="lbl-cost"></label>
+      </div>
+      <!-- Control Buttons -->
+      <div id="game-controls">
+        <button id="btn-play-in">▶️</button>
+        <button id="btn-fast">⏩</button>
+        <button id="btn-pause">⏸️</button>
+        <button id="btn-reset">🔄</button>
+      </div>
+      <!-- Game Canvas -->
+      <canvas id="game-canvas" width="800" height="500"></canvas>
+      <!-- Game Over Overlay -->
+      <div id="game-over" style="display: none">
+        <h2>Game Over</h2>
+        <button id="btn-reset-gameover">Reset Map</button>
+        <button id="btn-main-menu">Main Menu</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

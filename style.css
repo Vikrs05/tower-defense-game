@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#main-menu {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#main-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("assets/space.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1);
+  z-index: -1;
+  animation: bg-pulse 5s infinite ease-in-out;
+}
+
+@keyframes bg-pulse {
+  0% {
+    background-size: 100%;
+    filter: brightness(0.5);
+  }
+  50% {
+    background-size: 110%;
+    filter: brightness(0.8);
+  }
+  100% {
+    background-size: 100%;
+    filter: brightness(0.5);
+  }
+}
+
+#main-menu h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff; /* Neon cyan */
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #0088aa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1em;
+}
+#main-menu button,
+#map-select button,
+#instructions button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#btn-play,
+#btn-play2,
+#btn-instructions,
+#btn-exit,
+#btn-back-menu,
+#btn-back-menu2 {
+  width: 250px;
+  height: 50px;
+  border: solid;
+  border-color: #00ffff;
+  border-radius: 10px;
+  border-width: 5px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #0088aa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: none;
+
+  transition: 0.5s;
+}
+
+#btn-play:hover,
+#btn-play2:hover,
+#btn-instructions:hover,
+#btn-exit:hover,
+#btn-back-menu2:hover,
+#btn-back-menu:hover {
+  background-color: #00ffff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffffaa;
+}
+
+#instructions {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#instructions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("assets/space.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1);
+  z-index: -1;
+  animation: bg-pulse 5s infinite ease-in-out;
+}
+
+@keyframes bg-pulse {
+  0% {
+    background-size: 100%;
+    filter: brightness(0.5);
+  }
+  50% {
+    background-size: 110%;
+    filter: brightness(0.25);
+  }
+  100% {
+    background-size: 100%;
+    filter: brightness(0.5);
+  }
+}
+
+h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff; /* Neon cyan */
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #0088aa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff; /* Neon cyan */
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #0088aa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#instructions ul {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 1em;
+}
+#map-select .map-option {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+#map-select .map-option img {
+  width: 150px;
+  height: auto;
+  border: 2px solid #fff;
+  margin-bottom: 5px;
+}
+
+#map-select {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#map-select .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#map-select .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: #00ffff;
+  border-width: 5px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#game-screen {
+  position: relative;
+  background-color: #333;
+}
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.9rem;
+}
+#hud span {
+  margin-right: 20px;
+}
+#build-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#build-buttons button {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+#game-controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#game-controls button {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+#game-canvas {
+  background-color: #000;
+  display: block;
+  margin: 50px auto 0 auto;
+  border: 2px solid #555;
+}
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#game-over h2 {
+  margin-bottom: 1em;
+}
+#game-over button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+body.build-mode {
+  cursor: crosshair;
+}
